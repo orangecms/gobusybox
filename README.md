@@ -5,8 +5,8 @@
 If commands from more than one Go module are combined into a busybox, there are
 a few common dependency pitfalls to be aware of.
 
-`gobusybox` will do its best to print actionable suggestions like this in case
-of conflicts.
+`gobusybox` will do its best to print actionable suggestions as explained with
+the following example in case of conflicts.
 
 Let's say, for example, that [u-root](https://github.com/u-root/u-root)'s
 `cmds/core/*` is being combined into a busybox with
@@ -14,7 +14,7 @@ Let's say, for example, that [u-root](https://github.com/u-root/u-root)'s
 have a go.mod that covers their commands. These are referred to as their
 respective [main module go.mod](https://golang.org/ref/mod); i.e. if you
 compiled `u-root/cmds/core/ls`, the main module go.mod would be `u-root/go.mod`.
-This matter because only the main module's `replace` and `exclude` directives
+This matters because only the main module's `replace` and `exclude` directives
 are respected, and **gobusybox tries to merge each main module's `replace` and
 `exclude` directives**.
 
